@@ -10,12 +10,12 @@ headers = {
     'Host': 'pixelwar.insash.fr',
 }
 
-# ATTAQUE
-
 couleur = "white"
-x = [94,118]
-y = [94,118]
+x = [90,119]
+y = [90,119]
+data = "https://www.youtube.com/watch?v=LwEq6fHP5SA"
 
-# QR CODE
 
-qr_attaque([90,119], [90,119], "https://www.youtube.com/watch?v=LwEq6fHP5SA")  # pop simokééé
+# attaque(x, y, couleur, url, params, headers)
+
+qr_attaque(x, y, data, url, params, headers)  # pop simokééé

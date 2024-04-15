@@ -4,7 +4,7 @@ import time
 from config import *
 from qr_code import *
 
-def attaque (x : list, y : list, couleur : string) -> None :
+def attaque (x : list, y : list, couleur : str, url : str, params : set, headers : set) -> None :
     map = genmap(map_arr)
     attaquer = []
     for i in range(x[0], x[1]+1):
@@ -31,7 +31,7 @@ def attaque (x : list, y : list, couleur : string) -> None :
         print('Tour terminé, attende de 50s...')
         time.sleep(50)
 
-def qr_attaque (x : list, y : list, data : string) -> None:
+def qr_attaque (x : list, y : list, data : str, url : str, params : set, headers : set) -> None:
     map = genmap(map_arr)
     qr_noir = gen_QR(data)
     qr_noir_fix = []
@@ -49,7 +49,7 @@ def qr_attaque (x : list, y : list, data : string) -> None:
             if map[pos] != "white" :
                 qr_blanc.append(f'{i},{j}')
     
-    while len(qr_blanc) > 0 and len(qr_noir_fix) > 0 :
+    while len(qr_blanc) > 0 or len(qr_noir_fix) > 0 :
 
         for id in ids:
 
@@ -63,7 +63,9 @@ def qr_attaque (x : list, y : list, data : string) -> None:
 
                 if len(qr_blanc) == 0 : 
                     print("Cases blanches placées.")
-                    break
+
+                continue
+            
             elif len(qr_noir_fix)>0 :
                 pos = qr_noir_fix.pop(randint(0,len(qr_noir_fix)-1))
                 data = f'42["update","{pos}","white","{id}"]'
@@ -78,3 +80,5 @@ def qr_attaque (x : list, y : list, data : string) -> None:
 
         print('Tour terminé, attende de 50s...')
         time.sleep(50)
+    
+    print("QR code complété.")
