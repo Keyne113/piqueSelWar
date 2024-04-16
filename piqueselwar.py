@@ -3,7 +3,7 @@ from algos import *
 url = 'https://pixelwar.insash.fr/socket.io/'
 params = {
     'transport': 'polling',
-    'sid': 'DdUM7b6WXrdyx5tgAFlq'       # a modif a chaque fois
+    'sid': ''       # a modif a chaque fois
 }
 
 headers = {

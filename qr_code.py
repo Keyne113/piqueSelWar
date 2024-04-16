@@ -1,7 +1,6 @@
 import qrcode
 import numpy as np
 from PIL import Image
-import matplotlib.pyplot as plt
 
 def gen_QR(data : str) -> list:
     qr = qrcode.QRCode(

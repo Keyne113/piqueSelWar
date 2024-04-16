@@ -68,7 +68,7 @@ def qr_attaque (x : list, y : list, data : str, url : str, params : set, headers
             
             elif len(qr_noir_fix)>0 :
                 pos = qr_noir_fix.pop(randint(0,len(qr_noir_fix)-1))
-                data = f'42["update","{pos}","white","{id}"]'
+                data = f'42["update","{pos}","black","{id}"]'
 
                 response = requests.post(url, headers=headers, params=params, data=data)
                 print(response.status_code)
